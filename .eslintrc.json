@@ -1,0 +1,20 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "extends": [
+        "next/core-web-vitals",
+        "next/typescript",
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended"
+    ],
+    "plugins": ["@typescript-eslint", "prettier"],
+    "rules": {
+        "@typescript-eslint/no-unused-vars": "warn",
+        "prettier/prettier": ["error", { "endOfLine": "auto" }]
+    },
+    "env": {
+        "browser": true,
+        "node": true,
+        "es6": true
+    }
+}

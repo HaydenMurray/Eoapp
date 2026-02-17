@@ -1,0 +1,341 @@
+.pageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: grey;
+    position: relative;
+}
+
+.water {
+    height:500px;
+    width: 500px;
+    background-color: lightblue;
+    position: relative;
+}
+
+.gameContainer {
+    height:100%;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    position: relative;
+}
+
+.background {
+    z-index: 1;
+}
+
+.blurredBackground {
+    z-index: 1;
+    filter: blur(4px);
+}
+
+.peopleGroup1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: end;
+    margin-bottom: 20px;
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+}
+
+.blurredPeopleGroup1 {
+    filter: blur(4px);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: end;
+    margin-bottom: 20px;
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+}
+
+.peopleGroup2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: end;
+    margin-bottom: 20px;
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+    left: 60%;
+}
+
+.blurredPeopleGroup2 {
+    filter: blur(4px);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: end;
+    margin-bottom: 20px;
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+    left: 60%;
+}
+
+.textSpacing {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    width: 90%;
+    z-index: 3;
+    /* display: flex;
+    flex-direction: column;
+    gap: 2px;
+    z-index: 3;
+    left: 27%;
+    bottom: 5%; */
+}
+
+/* .characterName {
+    height: 20px;
+    background-color: rgba(120, 120, 120, 0.75);
+    width: 15%;
+} */
+
+.characterName {
+    font-weight: bold;
+    font-size: 1.25rem;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+}
+
+.dialogueBox {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    /* padding: 30px; */
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    /* height: 20%;
+    width: 60%;
+    background-color: rgba(120, 120, 120, 0.75); */
+}
+
+.choicesOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* overlay darkness */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.choices {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    z-index: 7;
+    width: 100%;
+    height: 100%;
+    /* background-color: #7f7f7f; */
+    /* margin-top: 20px; */
+}
+
+
+.question {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 24px;
+    color: black;
+    z-index: 7;
+    margin-top: 40px;
+}
+
+.choiceButton {
+    height: auto;
+    min-height: 70px;
+    width: 100%;
+    max-width: 700px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+    opacity: 1;
+    color: white;
+    font-size: 1.3rem;
+    padding: 15px;
+    text-align: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: normal;
+    margin: 0 auto;
+}
+.correctChoice {
+    background-color: #02B56B80 !important;
+    color: white;
+    opacity: 1;
+}
+.incorrectChoice {
+    background-color: #E17A7A80 !important;
+    color: white;
+    opacity: 1;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+.blurredImage {
+    filter: blur(4px);
+    object-fit: cover;
+}
+
+.choiceButton:hover:not(.incorrectChoice) {
+    background-color: black;
+    color: white
+}
+
+.incorrectText {
+    color: red;
+}
+
+.incorrect {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatarSection {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.textSection {
+    padding: 40px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+  
+
+.avatar {
+    width: 250px !important;
+    height: 250px !important;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+
+.messageText {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    word-wrap: break-word;
+    color: #f0f0f0;
+}
+
+.arrow {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.resultContainer {
+    padding: 2rem;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.narcatCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -150%);
+    z-index: 100;
+    width: 60vw;
+}
+
+.narcatOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 99;
+    backdrop-filter: blur(4px);
+}
+
+.startModalOverlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+}
+
+.startModalBackdrop {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+}
+
+.startModalBox {
+    position: relative;
+    z-index: 1001;
+    background: white;
+    border-radius: 2rem;
+    padding: 3rem 2.5rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+    max-width: 480px;
+    width: 90%;
+    text-align: center;
+}
+
+.startModalTitle {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.startModalDesc {
+    margin-bottom: 2rem;
+    color: #222;
+    font-size: 1.1rem;
+}
+
+.startModalButton {
+    background: #C62828;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 2.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+}

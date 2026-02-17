@@ -1,0 +1,422 @@
+/* Center the question text in the upper middle of the screen */
+.question-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 15vh; /* Position question closer to the top */
+    padding: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: black;
+    
+}
+
+/* Style the answer buttons for MC questions */
+.answers-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two answers per row */
+    gap: 10px; /* Spacing between answers */
+    margin-top: 30px;
+    width: 90%; /* Adjust width as needed */
+    color: white;
+}
+
+.mcq-answer-text {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: white;
+}
+.mcq-question-text {
+    margin-top: -30px;
+    font-size: 2rem;
+    font-weight: 500;
+    color: black;
+}
+
+.star-image-center {
+    display: block;
+    margin: 0px auto 20px auto;
+}
+
+.answers-container button {
+    padding: 50px 15px;
+    font-size: 1rem;
+    background-color: #141E31;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.answers-container button.corrrect {
+    background-color: #3E7829; /* Correct answer color */
+}
+
+.answers-container button:hover {
+    transform: scale(1.10);
+    transform: rotate(-5deg);
+    opacity: 0.75;
+}
+
+.answers-container button:active {
+    transform: scale(0.95);
+}
+
+.answers-container button.greyed {
+  cursor: default;
+  opacity: 0.6;
+}
+
+/* Correct answer turns green */
+.answers-container button.correct {
+  background-color: #3e7829;
+  opacity: 1;
+  color: white;
+}
+ /* to go to next question */
+button.next-button {
+    border: white 1px solid;
+    background-color: red;
+    color: white;
+    padding: 10px 10px;
+    border-radius: 30px;
+    margin: 30px;
+    width: 50%;
+    max-width: 200px;
+    font-weight: 600;
+    transition: transform 0.3s ease-in-out;
+}
+
+.next-button:hover {
+    transform: scale(1.05);
+}
+
+/* Incorrect answer turns red */
+.answers-container button.incorrect {
+  background-color: #b51515;
+  opacity: 1;
+  color: white;
+}
+/* For True/False or two-answer questions, maintain vertical layout */
+.answers-container.two-answers {
+    grid-template-columns: 1fr; /* Single column for two-answer questions */
+    width: auto;
+}
+
+/* Make sure the quiz container takes the full height */
+.feedback {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    width: 100%; /* Full width */
+}
+
+.feedback.correct {
+    color: green; /* Correct answer color */
+}
+
+.feedback.wrong {
+    color: red; /* Wrong answer color */
+}
+
+.dialog-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.dialog-panel {
+    max-width: 32rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: #ffffff;
+    padding: 3rem;
+    border-radius: 5px;
+}
+
+.continue-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.continue-container button {
+    margin: 10px;
+    padding: 8px 20px;
+    font-size: 1rem;
+    background-color: lightgray;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+
+}
+
+.continue-container button:hover {
+    opacity: 0.8;
+}
+.true-false-container {
+    position: absolute;
+    z-index: 15;
+    top: 25%;
+    top: 25%;
+    left: 35%;
+    width: 50%;  /* Adjusts based on screen size */
+    max-width: 600px; /* Prevents it from getting too large */
+    min-width: 300px; /* Prevents it from getting too small */
+    border-radius: 5px;
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+}
+.image-container {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-content: center;
+    z-index: 1;
+    top: -75px;
+    left: 25%;
+    margin-top: 20px;
+}
+.left-option-image {
+    display: flex;
+    position: relative;
+    bottom: -320px; 
+    left: -230px; 
+    width: 195px;
+    transition: transform 0.3s ease-in-out;
+}
+.left-option-image:hover {
+    transform: scale(1.1);
+}
+.right-option-image {
+    position: relative; 
+    bottom: -320px; 
+    left: 75px; 
+    width: 200px; 
+    transition: transform 0.3s ease-in-out;
+}
+
+.right-option-image:hover {
+    transform: scale(1.1); 
+}
+.feedback-image {
+    animation:
+        fadeIn 0.3s ease-in-out forwards,
+        fadeOut 0.3s ease-in-out forwards 0.3s;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+}
+
+.cat-image-container {
+    top: -50px;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-content: center;
+    z-index: 1;
+    margin-top: 20px;
+}
+
+.tf-question-text {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.tf-question-container {
+    background-color: #161c2e;
+    display: flex;
+    flex-direction: column; 
+    border-radius: 10px;
+    position: relative;
+    color: white;
+    font-size: 1rem;
+    font-weight: normal;
+    width: 60vh; 
+    max-width: 600px;
+    min-width: 300px;
+    height: 50vh;
+    min-height: 300px;
+    margin: auto;
+    padding: 50px 100px;
+}
+
+.under {
+    position: absolute;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+/* button:hover {
+    opacity: 0.8;
+} */
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.center-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-green {
+    background-color: #3e7829;
+    padding: 5px 30px;
+}
+
+.bg-red {
+    background-color: #b51515;
+    padding: 5px 30px;
+}
+
+.bg-light {
+    background-color: #f0eef7;
+    color: black;
+    padding: 5px 30px;
+}
+
+.correct-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: rgba(142, 182, 121, 0.33);
+    text-align: center;
+    border-top: 5px solid #2E7707;
+  }
+
+.incorrect-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: rgba(207, 123, 123, 0.33);
+    text-align: center;
+    border-top: 5px solid #9A5252;
+  }
+
+  .feedback-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 20px;
+    color: black;
+    max-width: 100%;
+  }
+
+  .custom-progress-container {
+    position: absolute; /* slightly off-centered rn */
+    top: -200px;
+    width: 100%;
+    height: 12px;
+    background-color: #C0C0C0;
+    border-radius: 6px;
+  }
+
+  .quiz-name-info {
+    position: absolute;
+    top: -900%;
+    left: 0%;
+    width: 100%;
+    height: 100px;
+    text-align: left;
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+    padding-top: 20px; /* Adjust as needed */
+  }
+  
+  .custom-progress-fill {
+    height: 100%;
+    background: black;
+    transition: width 0.3s ease-in-out;
+    border-radius: 6px;
+  }
+
+  .dialog-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 32rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: #171D2F;
+    color: white;
+    padding: 3rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-lg in Tailwind */
+  }
+
+  .dialog-title {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .dialog-description {
+    font-size: 1rem;
+    text-align: center;
+    font-weight: 300;
+    margin-bottom: 1rem;
+  }
+
+  .dialog-button button {
+    background-color: white;
+    color: #171D2F;
+    text-align: center;
+    padding: 10px 40px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+
+.dialog-button button:hover {
+        background-color: lightgray;
+ }
+
+ 
+ 
